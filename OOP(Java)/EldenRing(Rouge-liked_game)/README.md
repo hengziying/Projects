@@ -11,6 +11,6 @@ Team members:
 # Team Contribution Log Spreadsheet
 https://docs.google.com/spreadsheets/d/1-lvBtzVs8NhmINNFIypbpXjKnV3jCvKWLPFxOlfrqgI/edit?usp=sharing
 
-#Way to play
+# Way to play
 Execute and run the file Application.java
 
