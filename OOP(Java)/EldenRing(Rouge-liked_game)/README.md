@@ -8,5 +8,5 @@ Team members:
 
 
 # Way to play
-Execute and run the file Application.java
+Execute and run the file 'Application.java'
 
