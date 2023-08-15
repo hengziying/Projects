@@ -4,9 +4,12 @@ from typing import TypeVar, Generic
 # from referential_array import ArrayR, T
 T = TypeVar('T')
 
-############################################
-# Fast Backup
-############################################
+##################################################
+# Fast Backup                                    #
+# An algorithm to determine the maximum possible #
+# data throughput from the data center origin to # 
+# the target data centers using Python.          #
+##################################################
 class Queue(ABC, Generic[T]):
     """ Abstract class for a generic Queue.
     *Reference from FIT1008 Queue ADT implementation

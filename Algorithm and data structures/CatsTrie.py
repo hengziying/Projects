@@ -7,9 +7,11 @@ T = TypeVar('T')
 
 
 
-############################################
-# CatsTrie
-############################################
+#############################################
+# CatsTrie                                  #
+#An algorithm that will auto complete an    # 
+#input of sentence from a list of sentence. #
+#############################################
 
 
 class Node:
