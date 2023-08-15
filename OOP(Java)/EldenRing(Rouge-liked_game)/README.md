@@ -1,4 +1,4 @@
-# Elden Ring
+# Elden Ring ( text_based rouge like game)
 
 ## MA_Lab06_Group2
 Team members:
