@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="757909F5-6287-01F7-DB54-F2EB0DCB533D" name="BIN_TYPE">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:50:09 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="bin_type_size" id="7A04D056-E7E7-874E-CF02-792847201FBF">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:50:16 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="waste_type_id" id="9009E423-EE24-C274-B3D9-7CA4E02222FE">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:08:07 UTC</createdTime>
+<generatorID>6CD82A69-E5B5-8E17-61D1-70F05B62DE6A</generatorID>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>FD920B81-EE68-6F87-E0CE-62522030FE79</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bin_type_supply_cost" id="EDF11E1D-84C7-D3E9-5428-48A8FECA266E">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:50:16 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4E9FD98B-493B-70BE-53F4-B65F6317D24F" name="BIN_TYPE PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:06:48 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7A04D056-E7E7-874E-CF02-792847201FBF</attributeRef>
+<attributeRef>9009E423-EE24-C274-B3D9-7CA4E02222FE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

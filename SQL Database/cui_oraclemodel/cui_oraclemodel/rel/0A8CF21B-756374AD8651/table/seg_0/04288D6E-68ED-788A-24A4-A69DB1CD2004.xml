@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="04288D6E-68ED-788A-24A4-A69DB1CD2004" name="DRIVER">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>7FA3E9E3-3FD6-68B9-FCF3-FC90D6BBA303</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="driver_no" id="F58A966C-78A4-8BDA-9781-F25A2910C8B3">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identification number assigned to Drivers by CUI]]></commentInRDBMS>
+<generatorID>79AF51A7-1122-43D0-1251-B0C9CE6E22CF</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="driver_license_no" id="4B5AA0C6-2E8B-A2DD-E263-FB8479F0EF87">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[License Number for a given Truck Driver]]></commentInRDBMS>
+<generatorID>68813E11-A58F-ED91-1EEA-2EB203C5D1FD</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="driver_name" id="76328E37-0512-C347-DF03-6BC2101AAF62">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Name of a given Truck Driver]]></commentInRDBMS>
+<generatorID>5192A505-9991-703D-E3B5-9EEB45959B9A</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="driver_dob" id="70E872FF-3C82-BDDE-258B-7500D135823D">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date of Birth of a given truck driver]]></commentInRDBMS>
+<generatorID>90B72886-4C6D-B08E-1244-73E50E0DC1DC</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="driver_tax_no" id="65EF3AD6-9CC8-6461-3367-72A52D97D71D">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Taxfile number of a given truck driver]]></commentInRDBMS>
+<generatorID>B9A34805-DAF3-92A1-E058-3990784875B2</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="driver_contact" id="CD8A48F9-CE59-C676-6F2A-A35B959F0A67">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Phone number of a given truck driver]]></commentInRDBMS>
+<generatorID>C49D75F3-06F5-60B6-C945-B1C9CC6F1945</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="383BF043-1739-051A-7CA8-DBE97FD86C74" name="DRIVER_PK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>BF1786C4-E61C-50C0-A94C-648AE47220B4</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F58A966C-78A4-8BDA-9781-F25A2910C8B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

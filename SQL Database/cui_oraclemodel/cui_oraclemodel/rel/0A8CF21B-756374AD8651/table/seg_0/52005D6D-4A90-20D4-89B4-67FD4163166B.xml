@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52005D6D-4A90-20D4-89B4-67FD4163166B" name="AUTHORITY">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>CF87021A-95CC-4454-75A4-AAB53B300E31</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="auth_name" id="EF137C5C-B10A-CDA4-B54E-D3B0ED26BF01">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given Authority's name]]></commentInRDBMS>
+<generatorID>AB8A1324-676A-C3F6-5282-026662352790</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auth_ceo_gname" id="3653D3E6-27FB-18C7-0C47-025CF839E30B">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given Name of the Chief Executive Officer of the given Authority Instance]]></commentInRDBMS>
+<generatorID>ED1AEA4C-0863-1107-AD7F-AF5FAB96390F</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auth_ceo_fname" id="8697C8EA-5C48-9CA5-C011-CA6891DF8559">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[First Name of the Chief Executive Officer of the given Authority Instance]]></commentInRDBMS>
+<generatorID>E78CA4F9-3B83-F019-3053-A0AD4462C253</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auth_phone" id="9E77D533-89BF-8E17-A652-5D2E6CE3B3BF">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Phone Number of the Given Authority Instance]]></commentInRDBMS>
+<generatorID>7543C7F5-784D-3B67-DEA4-45F50FD01E26</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auth_total_area" id="38DF7A0E-AC7D-4C53-C316-C714E3E4FFB6">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Area under control by the given Authority Instance]]></commentInRDBMS>
+<generatorID>33C06D14-575E-C157-8637-6E4D34E01A78</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auth_type" id="7D822A60-9233-8794-D739-70882F491D58">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Type of the given Authority Instance]]></commentInRDBMS>
+<generatorID>AC29FF5E-FB00-9111-F598-01F653B8C66E</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<constraintName>chk_auth_type</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<listOfValues>
+<valueDef value="Borough" description="Borough authority type"/>
+<valueDef value="City" description="City authority type"/>
+<valueDef value="District Council" description="District Council authority type"/>
+<valueDef value="Shire" description="Shire authority type"/>
+<valueDef value="Town" description="Town authority type"/>
+</listOfValues>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6E22ACEF-34FC-79C9-343A-CB73A1DFFB95" name="AUTHORITY_PK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>B9229460-5A2A-DE50-3E9B-313C3721FA4F</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF137C5C-B10A-CDA4-B54E-D3B0ED26BF01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

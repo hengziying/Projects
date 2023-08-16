@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C58A92CB-D720-2387-EFB5-9F8DEA9383CC" name="WASTE_TYPE">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:51:34 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="waste_type_id" id="FD920B81-EE68-6F87-E0CE-62522030FE79">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:51:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given waste type's unique ID]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="waste_type_description" id="DC69671D-0F59-32B0-A045-80DE9DD9EA10">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:51:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[Description of the given waste type]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<constraintName>chk_waste_type_desc</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="Glass" description="Glass Waste Type"/>
+<valueDef value="Green Waste" description="Green Waste Type"/>
+<valueDef value="Landfill" description="Landfill Waste Type"/>
+<valueDef value="Recycle" description="Recyclable Waste Type"/>
+<valueDef value="Standard" description="Standard Waste Type"/>
+</listOfValues>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5313980B-1DFF-370A-B3E3-609B7EB3FE42" name="WASTE_TYPE PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:07:58 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FD920B81-EE68-6F87-E0CE-62522030FE79</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="67A5430C-2569-FA8B-7088-A29DFCF06434" name="WASTE_TYPE_NK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:27:04 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<newElementsIDs>DC69671D-0F59-32B0-A045-80DE9DD9EA10</newElementsIDs>
+<usedAttributes>
+<attributeRef>DC69671D-0F59-32B0-A045-80DE9DD9EA10</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

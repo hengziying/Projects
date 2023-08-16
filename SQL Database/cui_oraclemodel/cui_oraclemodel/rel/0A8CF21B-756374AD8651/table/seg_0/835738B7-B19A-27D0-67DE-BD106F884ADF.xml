@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="835738B7-B19A-27D0-67DE-BD106F884ADF" name="CONTRACT">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>4DCC05E4-077A-E29C-6BEC-D0FCC4611116</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="contract_no" id="42AC4BE5-FA76-E4AC-F2E9-B6FE8637ABA1">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The contract's unique id]]></commentInRDBMS>
+<generatorID>6B3E720F-AA44-3ADF-91B4-02F23CC06374</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contract_start_date" id="3A6C3F5D-529B-FD24-8EC5-E90D11B4B4C0">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The contract's start date]]></commentInRDBMS>
+<generatorID>B17B1D8F-B202-4D37-0743-930A05A51F9C</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contract_end_date" id="12F05CF7-545B-2FFB-F1CF-9814B458FB43">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The contract's end date]]></commentInRDBMS>
+<generatorID>9B9DC8B7-F9F8-78AB-B83C-EB48F929BD0B</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auth_name" id="39145440-329E-5934-58D7-1698DC41CC58">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given Authority's name]]></commentInRDBMS>
+<generatorID>821ACB7A-5907-722C-53B0-3E3096ADE74B</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="41705379-6857-3446-D81B-717517431000" referredColumn="EF137C5C-B10A-CDA4-B54E-D3B0ED26BF01"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E6A02F3B-6258-1904-5C0E-8FED5B0FED4A" name="CONTRACT_PK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>762EF2D6-FC1F-0048-17EE-C2F7EB4ECF14</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42AC4BE5-FA76-E4AC-F2E9-B6FE8637ABA1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="82E206E7-90CA-E7B1-8A0B-D41A47436620" name="authority_contract">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>6BB1F3EA-3185-9A97-161C-0BF88DE9084D</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39145440-329E-5934-58D7-1698DC41CC58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

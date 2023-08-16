@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="97746BF2-F1E2-90D2-8F2E-E26FE0FA374C" name="BIN_TYPE">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>757909F5-6287-01F7-DB54-F2EB0DCB533D</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bin_type_size" id="BED7A1B6-2422-BAEC-ED99-F8E70904E3E0">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Size/Capacity of a given bin ( In Litres )]]></commentInRDBMS>
+<generatorID>7A04D056-E7E7-874E-CF02-792847201FBF</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="waste_type_id" id="480DA71F-E3EE-EE26-1402-FF0EA36D709F">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given waste type's unique ID]]></commentInRDBMS>
+<generatorID>9009E423-EE24-C274-B3D9-7CA4E02222FE</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="02E8ECCA-378A-1E02-A9C8-7E14718242B8" referredColumn="5DBDD85B-3291-7F00-2568-A8398B097D93"/>
+</associations>
+</Column>
+<Column name="bin_type_supply_cost" id="AF05C810-ED4F-8715-0D5E-E858A1A298DF">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Standard Supply Cost for the specific Bin Type]]></commentInRDBMS>
+<generatorID>EDF11E1D-84C7-D3E9-5428-48A8FECA266E</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="41E37337-DDCE-2BDB-FD72-51585F40F364" name="BIN_TYPE_PK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>4E9FD98B-493B-70BE-53F4-B65F6317D24F</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BED7A1B6-2422-BAEC-ED99-F8E70904E3E0"/>
+<colUsage columnID="480DA71F-E3EE-EE26-1402-FF0EA36D709F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BBF49AD2-F36C-0326-D84B-74A72753BD8E" name="waste_type_bin_type">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>6CD82A69-E5B5-8E17-61D1-70F05B62DE6A</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="480DA71F-E3EE-EE26-1402-FF0EA36D709F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

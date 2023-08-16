@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="87AED9F1-F362-F20C-00E0-E6A3F8EFCCE9" name="CONTRACT_DETAIL">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:52:40 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="waste_type_id" id="14132DDA-873C-C922-998B-EED7DAB7604E">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:09:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given waste type's unique ID]]></commentInRDBMS>
+<generatorID>0E707F34-B460-76A3-D106-F93FBEB099AD</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>FD920B81-EE68-6F87-E0CE-62522030FE79</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contract_no" id="B5086176-FC4C-8597-5266-469B532A5E3D">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:11:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[The contract's unique id]]></commentInRDBMS>
+<generatorID>991F1992-4433-3BC8-D488-59C4C840ED83</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>6B3E720F-AA44-3ADF-91B4-02F23CC06374</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="c_d_collection_cost" id="4EC97378-92FC-7F96-4BFD-EC04233E2659">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:53:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fixed collection cost per kilogram for waste types being collected  by the contract, specified by the contract]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="c_d_collection_freq" id="F1BD871D-814F-07CE-F93D-17AA596E295C">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:27:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Contract detail specifying fixed intervals for waste collection]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<constraintName>chk_contract_det_col_freq</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<listOfValues>
+<valueDef value="Fortnightly" description="Waste is collected every two weeks"/>
+<valueDef value="Monthly" description="Waste is collected every month"/>
+<valueDef value="Weekly" description="Waste is collected every week"/>
+</listOfValues>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1C1593EE-F845-33B2-40AA-6545178E1E02" name="CONTRACT_COST PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:09:30 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>14132DDA-873C-C922-998B-EED7DAB7604E</attributeRef>
+<attributeRef>B5086176-FC4C-8597-5266-469B532A5E3D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

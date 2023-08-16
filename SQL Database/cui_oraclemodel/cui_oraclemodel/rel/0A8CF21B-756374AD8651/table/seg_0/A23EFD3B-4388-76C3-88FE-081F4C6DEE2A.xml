@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A23EFD3B-4388-76C3-88FE-081F4C6DEE2A" name="PROPERTY">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>E6647CD1-8FAB-7E95-58C1-0ACB88B3EF29</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="property_id" id="B61A0215-5D03-2015-9D7A-9DEE27998370">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The ID of the property]]></commentInRDBMS>
+<generatorID>4082E5F3-0ADD-015D-AED4-CA384D8B3589</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="property_street_no" id="7B8318B9-0B00-1A50-0953-9A3121FC20CF">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given street number of a property]]></commentInRDBMS>
+<generatorID>1A2A655A-39D4-AF70-D86C-E741DF7AC9D6</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="street_id" id="03FCA734-ADF6-987E-97F8-BC1F11218A33">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The street's unique id (within the local authority only)]]></commentInRDBMS>
+<generatorID>714DEF8B-2480-CF4B-B368-65F191DBE300</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="89B2FF80-5837-1E82-589F-8DCCD4DF0E90" referredColumn="D06201ED-E286-2690-7A85-7602B047F441"/>
+</associations>
+</Column>
+<Column name="auth_name" id="65929619-4A7D-6A2A-D269-C409AB36AC7A">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given Authority's name]]></commentInRDBMS>
+<generatorID>4EFD6721-8745-F8DC-DFD6-6B4647CD59D6</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="89B2FF80-5837-1E82-589F-8DCCD4DF0E90" referredColumn="A78A13EF-9779-1240-59C7-122F9BE92AA0"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9E37F498-8299-27CC-B7FB-CAA249F5DC4E" name="PROPERTY_PK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>0AD2DC82-83D7-98D0-3283-C1CD1FA453C5</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B61A0215-5D03-2015-9D7A-9DEE27998370"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D1E8CFE-B57D-C942-7BA4-5A8FCE5BA152" name="PROPERTY_NK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>D5BC990A-E29C-C968-4ADF-BC56644527F5</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B8318B9-0B00-1A50-0953-9A3121FC20CF"/>
+<colUsage columnID="03FCA734-ADF6-987E-97F8-BC1F11218A33"/>
+<colUsage columnID="65929619-4A7D-6A2A-D269-C409AB36AC7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07B9FCD4-A818-3ECB-4023-E6F21AABEE0A" name="street_property">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>6F8669BE-F3B5-2A6E-CCA4-BEFD3215B238</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03FCA734-ADF6-987E-97F8-BC1F11218A33"/>
+<colUsage columnID="65929619-4A7D-6A2A-D269-C409AB36AC7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

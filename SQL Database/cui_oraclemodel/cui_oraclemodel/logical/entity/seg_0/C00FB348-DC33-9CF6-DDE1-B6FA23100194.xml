@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C00FB348-DC33-9CF6-DDE1-B6FA23100194" name="COLLECTION">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:14:09 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="collection_date" id="144BBE9B-A734-0404-5CFB-2129CEC7DDBE">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:30:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date in which the Waste Collection occured]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="truck_vin" id="DC4B8D6C-1D9F-E9D2-5578-90303F7AC394">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:41:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Vehicle Identification Number assigned to each truck]]></commentInRDBMS>
+<generatorID>CF14E3AC-2AD3-5370-4321-FE36A85D1695</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>7AC51FE3-7F97-5544-FE3A-14DCD2AFF838</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>17</dataTypeSize>
+<ownDataTypeParameters>17,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="driver_no" id="8B908E97-DD29-2EFF-CC61-72B26D2C34C7">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:41:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identification number assigned to Drivers by CUI]]></commentInRDBMS>
+<generatorID>CF14E3AC-2AD3-5370-4321-FE36A85D1695</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>D758EE36-498B-FF2E-48DB-D3C32F38C6D0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="waste_type_id" id="908B8D27-BF64-E12E-B6AF-D88F593C1A59">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 02:19:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given waste type's unique ID]]></commentInRDBMS>
+<generatorID>589FB6A7-FE9B-3481-12F5-09C3F2150597</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>14132DDA-873C-C922-998B-EED7DAB7604E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contract_no" id="DA3FD5C0-E3F8-3513-7ADB-77FC26CEC624">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 02:19:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[The contract's unique id]]></commentInRDBMS>
+<generatorID>589FB6A7-FE9B-3481-12F5-09C3F2150597</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>B5086176-FC4C-8597-5266-469B532A5E3D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4F1EAE5E-1467-8FFB-491A-9D64A98341B7" name="COLLECTION PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:29:44 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>144BBE9B-A734-0404-5CFB-2129CEC7DDBE</attributeRef>
+<attributeRef>908B8D27-BF64-E12E-B6AF-D88F593C1A59</attributeRef>
+<attributeRef>DA3FD5C0-E3F8-3513-7ADB-77FC26CEC624</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

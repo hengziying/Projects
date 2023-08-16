@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2D8C501D-2150-26B0-44FB-056C27ADF446" name="COLLECTION">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>C00FB348-DC33-9CF6-DDE1-B6FA23100194</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="collection_date" id="48A906F4-24FB-1F1A-0042-A87DFE52255C">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date in which the Waste Collection occured]]></commentInRDBMS>
+<generatorID>144BBE9B-A734-0404-5CFB-2129CEC7DDBE</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="truck_vin" id="47A8F694-33A1-1BA7-209D-312FEB539285">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Vehicle Identification Number assigned to each truck]]></commentInRDBMS>
+<generatorID>DC4B8D6C-1D9F-E9D2-5578-90303F7AC394</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>17</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75B9446A-143D-4EC5-899E-571783BB08F8" referredColumn="D00C0FB5-EC88-0E31-6B86-1F41DE04C6D7"/>
+</associations>
+</Column>
+<Column name="driver_no" id="FD7FE6F9-7006-ABFE-2FEB-B8DF9070D145">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identification number assigned to Drivers by CUI]]></commentInRDBMS>
+<generatorID>8B908E97-DD29-2EFF-CC61-72B26D2C34C7</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75B9446A-143D-4EC5-899E-571783BB08F8" referredColumn="0BBA3238-ABE5-7297-99B4-07C22E496C08"/>
+</associations>
+</Column>
+<Column name="waste_type_id" id="412D638C-108B-962A-0D83-606DFF86789D">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given waste type's unique ID]]></commentInRDBMS>
+<generatorID>908B8D27-BF64-E12E-B6AF-D88F593C1A59</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E3E1421-13F6-C117-2934-BA300C82FACC" referredColumn="DB930FDB-27DD-1049-D5B2-0DD6D5593205"/>
+</associations>
+</Column>
+<Column name="contract_no" id="EBD949E8-BB86-1CD0-012B-F53DB10C1FC9">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The contract's unique id]]></commentInRDBMS>
+<generatorID>DA3FD5C0-E3F8-3513-7ADB-77FC26CEC624</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E3E1421-13F6-C117-2934-BA300C82FACC" referredColumn="5D7C3C1B-C633-2672-F8AB-3B488E2380C1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6B477029-5B56-E870-7FB2-1242C528CD32" name="COLLECTION_PK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>4F1EAE5E-1467-8FFB-491A-9D64A98341B7</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48A906F4-24FB-1F1A-0042-A87DFE52255C"/>
+<colUsage columnID="412D638C-108B-962A-0D83-606DFF86789D"/>
+<colUsage columnID="EBD949E8-BB86-1CD0-012B-F53DB10C1FC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DB43010A-343B-1F69-014C-08B854652580" name="collection_authorised_driver">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>CF14E3AC-2AD3-5370-4321-FE36A85D1695</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47A8F694-33A1-1BA7-209D-312FEB539285"/>
+<colUsage columnID="FD7FE6F9-7006-ABFE-2FEB-B8DF9070D145"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5FD3DFAA-5670-F5BC-A205-0EBDF2DFC27B" name="contract_detail_collection">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>589FB6A7-FE9B-3481-12F5-09C3F2150597</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="412D638C-108B-962A-0D83-606DFF86789D"/>
+<colUsage columnID="EBD949E8-BB86-1CD0-012B-F53DB10C1FC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

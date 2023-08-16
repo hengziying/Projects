@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E7130DE1-12B4-E9C3-59FD-C5FCB64AE528" name="BIN_COST">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>E91D2DD8-731F-6BFF-D95D-FEE341958F81</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bin_type_size" id="4B1FBDB3-8933-1B9F-4141-6A2A5589FF65">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Size/Capacity of a given bin ( In Litres )]]></commentInRDBMS>
+<generatorID>715DED6A-2E2C-E235-56A3-9D5D5E92344D</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="12362C49-1BF5-0061-C598-B56EB95BC60C" referredColumn="BED7A1B6-2422-BAEC-ED99-F8E70904E3E0"/>
+</associations>
+</Column>
+<Column name="waste_type_id" id="78EC6D75-EEDA-CF68-5455-A911C59F12CB">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given waste type's unique ID]]></commentInRDBMS>
+<generatorID>A8196331-3EBF-FC49-888F-88F674AD2604</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="12362C49-1BF5-0061-C598-B56EB95BC60C" referredColumn="480DA71F-E3EE-EE26-1402-FF0EA36D709F"/>
+</associations>
+</Column>
+<Column name="contract_no" id="DC9E59B8-0031-73EF-1D35-2E6FAEB84EA5">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The contract's unique id]]></commentInRDBMS>
+<generatorID>CDA9A8CA-8F05-0A7E-5916-828ADDCB8238</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0968B543-3F1F-6077-B482-9D94EF4B3755" referredColumn="42AC4BE5-FA76-E4AC-F2E9-B6FE8637ABA1"/>
+</associations>
+</Column>
+<Column name="bin_supply_cost" id="EEC59F1A-088B-5A35-2558-D4F8C7C7D10F">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[The supply cost of a bin type required, which differs from the standard bin supply cost]]></commentInRDBMS>
+<generatorID>0C655102-78DE-AEAD-E9FA-999AFB54790B</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="84C56582-CDB4-D1AF-F95C-736EDC6B0BBD" name="BIN_COST_PK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>271F6F46-6F18-AF72-B348-BDD9998A491C</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B1FBDB3-8933-1B9F-4141-6A2A5589FF65"/>
+<colUsage columnID="78EC6D75-EEDA-CF68-5455-A911C59F12CB"/>
+<colUsage columnID="DC9E59B8-0031-73EF-1D35-2E6FAEB84EA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26510F1F-82D1-9A7E-7224-2F979C46A9D4" name="bin_type_bin_cost">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>02E7F50E-E018-F854-A901-E1FD3D373E28</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B1FBDB3-8933-1B9F-4141-6A2A5589FF65"/>
+<colUsage columnID="78EC6D75-EEDA-CF68-5455-A911C59F12CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BAF2BE1A-7445-3BE1-14AB-CCBEF4CF850E" name="contact_bin_cost">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 06:09:07 UTC</createdTime>
+<generatorID>C18C2435-06CF-46B8-04E9-4941251CD0F6</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC9E59B8-0031-73EF-1D35-2E6FAEB84EA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

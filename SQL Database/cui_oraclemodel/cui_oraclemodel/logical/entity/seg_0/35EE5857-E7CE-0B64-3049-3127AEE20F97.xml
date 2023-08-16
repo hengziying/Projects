@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="35EE5857-E7CE-0B64-3049-3127AEE20F97" name="TRUCK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:14:03 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="truck_vin" id="AB3DB91A-54B8-C590-1E68-9DAA08B9F53A">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:24:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Vehicle Identification Number assigned to each truck]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>17</dataTypeSize>
+<ownDataTypeParameters>17,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="truck_rego_no" id="E80AEF33-8996-9245-2F25-1535F49009F4">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:24:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Registration number for the truck]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="truck_make" id="B9142B36-F62D-F4A6-4849-C1EA8BAD5F39">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:24:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given truck's brand/manufacturer]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="truck_model" id="F7BA243A-1408-2F5F-FBFA-102F9330ACD7">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:24:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given truck's specific model]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="truck_year" id="22A1B2B6-0B95-B412-30E1-00AC864CE282">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:24:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date in which the truck was manufactured]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9D6216A8-8D93-8FC3-FDBD-32B039E8CBF8" name="TRUCK PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-02 00:24:37 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AB3DB91A-54B8-C590-1E68-9DAA08B9F53A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

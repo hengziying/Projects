@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E6647CD1-8FAB-7E95-58C1-0ACB88B3EF29" name="PROPERTY">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:37:57 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="property_id" id="4082E5F3-0ADD-015D-AED4-CA384D8B3589">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-02 15:51:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[The ID of the property]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="property_street_no" id="1A2A655A-39D4-AF70-D86C-E741DF7AC9D6">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:38:05 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given street number of a property]]></commentInRDBMS>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street_id" id="714DEF8B-2480-CF4B-B368-65F191DBE300">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:38:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[The street's unique id (within the local authority only)]]></commentInRDBMS>
+<generatorID>6F8669BE-F3B5-2A6E-CCA4-BEFD3215B238</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>C017B035-D77F-A636-092C-5704C15D6DCC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="auth_name" id="4EFD6721-8745-F8DC-DFD6-6B4647CD59D6">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:38:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given Authority's name]]></commentInRDBMS>
+<generatorID>6F8669BE-F3B5-2A6E-CCA4-BEFD3215B238</generatorID>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>F56A230E-336B-9964-8991-B97523136F1C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0AD2DC82-83D7-98D0-3283-C1CD1FA453C5" name="PROPERTY PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:38:24 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4082E5F3-0ADD-015D-AED4-CA384D8B3589</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="D5BC990A-E29C-C968-4ADF-BC56644527F5" name="PROPERTY_NK">
+<createdBy>ZY</createdBy>
+<createdTime>2023-05-03 02:12:29 UTC</createdTime>
+<ownerDesignName>cui_oraclemodel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="false"/>
+</engineerTo>
+<newElementsIDs>1A2A655A-39D4-AF70-D86C-E741DF7AC9D6,6F8669BE-F3B5-2A6E-CCA4-BEFD3215B238</newElementsIDs>
+<usedAttributes>
+<attributeRef>1A2A655A-39D4-AF70-D86C-E741DF7AC9D6</attributeRef>
+<attributeRef>714DEF8B-2480-CF4B-B368-65F191DBE300</attributeRef>
+<attributeRef>4EFD6721-8745-F8DC-DFD6-6B4647CD59D6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

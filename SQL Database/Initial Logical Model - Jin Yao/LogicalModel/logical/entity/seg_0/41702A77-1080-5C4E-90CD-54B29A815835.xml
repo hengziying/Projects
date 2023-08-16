@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="41702A77-1080-5C4E-90CD-54B29A815835" name="STREET">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:29:25 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="street_id" id="C017B035-D77F-A636-092C-5704C15D6DCC">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:29:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[The street's unique id (within the local authority only)]]></commentInRDBMS>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street_name" id="B51CA3DA-34E9-9AD4-0702-F6534D2EC2FD">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:29:42 UTC</createdTime>
+<commentInRDBMS><![CDATA[The name of the street]]></commentInRDBMS>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street_length" id="9683387E-8E28-D22F-1BE0-88C8086FF01B">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:30:36 UTC</createdTime>
+<commentInRDBMS><![CDATA[street length (in meters)]]></commentInRDBMS>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street_surface_type" id="628E10A8-F19F-0B2F-0F4E-15B7A1EFF00D">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:30:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[The surface type of the street]]></commentInRDBMS>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<constraintName>chk_street_surface_type</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<listOfValues>
+<valueDef value="Asphalt" description="Asphalt road surface"/>
+<valueDef value="Concrete" description="Concrete road surface"/>
+<valueDef value="Unsealed" description="Unsealed road surface"/>
+</listOfValues>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street_lanes_no" id="A1A463E9-B308-418C-5416-1407EA126E13">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:30:12 UTC</createdTime>
+<commentInRDBMS><![CDATA[The number of lanes of the street]]></commentInRDBMS>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="auth_name" id="F56A230E-336B-9964-8991-B97523136F1C">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:46:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given Authority's name]]></commentInRDBMS>
+<generatorID>68E3D698-B783-69E8-1867-8F7537521EFD</generatorID>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>AB8A1324-676A-C3F6-5282-026662352790</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C3F2EF52-91E3-99C9-EE4B-ABCFEB0E0659" name="STREET PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:29:37 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C017B035-D77F-A636-092C-5704C15D6DCC</attributeRef>
+<attributeRef>F56A230E-336B-9964-8991-B97523136F1C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

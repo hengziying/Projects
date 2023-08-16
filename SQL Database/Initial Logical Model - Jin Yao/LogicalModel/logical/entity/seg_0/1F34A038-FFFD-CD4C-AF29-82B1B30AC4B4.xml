@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1F34A038-FFFD-CD4C-AF29-82B1B30AC4B4" name="BIN">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:49:34 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="bin_rfid" id="26F19D4F-9630-7CF8-46C0-39F3A6D8F62D">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:49:39 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bin_replacement_reason" id="A25FF54D-459A-EEAE-0CA7-95A2D9A0797B">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:49:40 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<constraintName>chk_replacement_reason</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<listOfValues>
+<valueDef value="Bin Failure" description="(fair use eg. old age)"/>
+<valueDef value="Damaged by owner" description=""/>
+<valueDef value="Damaged during pickup of waste" description=""/>
+<valueDef value="Stolen" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bin_supply_date" id="44C8B6D1-720D-02E2-3636-B295F43E6406">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:49:40 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bin_type_size" id="BDAFF373-4BD5-83F4-1F18-0B485A037AE2">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:06:49 UTC</createdTime>
+<generatorID>A700C556-4B77-01E9-04AD-3CCBEE7D2093</generatorID>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>7A04D056-E7E7-874E-CF02-792847201FBF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="waste_type_id" id="D7645C07-4FF6-1BE4-BA1C-117D91B39567">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:08:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given waste type's unique ID]]></commentInRDBMS>
+<generatorID>A700C556-4B77-01E9-04AD-3CCBEE7D2093</generatorID>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>9009E423-EE24-C274-B3D9-7CA4E02222FE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="property_street_no" id="4817F363-A75C-41C2-A312-80C25172462C">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:39:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given street number of a property]]></commentInRDBMS>
+<generatorID>39FEE990-2B17-C078-6CE6-D38D31F3F507</generatorID>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>1A2A655A-39D4-AF70-D86C-E741DF7AC9D6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street_id" id="0EA887E7-6BD1-711B-999C-EED52F858501">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:39:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[The street's unique id (within the local authority only)]]></commentInRDBMS>
+<generatorID>39FEE990-2B17-C078-6CE6-D38D31F3F507</generatorID>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>714DEF8B-2480-CF4B-B368-65F191DBE300</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="auth_name" id="DD4CFE31-26CB-5D83-8EE7-3CE84E7AB604">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 14:39:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Given Authority's name]]></commentInRDBMS>
+<generatorID>39FEE990-2B17-C078-6CE6-D38D31F3F507</generatorID>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<referedAttribute>4EFD6721-8745-F8DC-DFD6-6B4647CD59D6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D0B85E67-E734-67A5-65D0-583AA18C9514" name="BIN PK">
+<createdBy>jinyao</createdBy>
+<createdTime>2023-05-01 13:50:01 UTC</createdTime>
+<ownerDesignName>LogicalModel</ownerDesignName>
+<engineerTo>
+<item key="0A8CF21B-35C5-10EB-E9E8-756374AD8651" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>26F19D4F-9630-7CF8-46C0-39F3A6D8F62D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
