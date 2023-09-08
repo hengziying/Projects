@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>FIT2102 A1 2023</title>
+  </head>
+  <body>
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/WKgs15y/tetris.png" alt="tetris" border="0"></a>
+    <main id="main" class="flex row">
+      <svg id="svgCanvas">
+        <!-- game over text box -->
+        <g id="gameOver" visibility="hidden">
+          <rect x="26" y="120" fill="white" height="48" width="149" style="stroke: #373c37;"></rect>
+          <text x="36" y="150" style="fill:#373c37">Game Over</text>
+          <!-- <foreignObject x="50" y="180" width="100" height="30" style="cursor: pointer;">
+            <button id="restartButton" type="button" style="width: 100%; height: 100%; background-color: rgb(55,60,55); color: rgb(230, 223, 218); border-color: rgb(230, 223, 218); box-shadow: 2px 2px 2px #383730; border-radius: 0.5em;">Restart</button>
+          </foreignObject> -->
+        </g>
+      </svg>
+      <div id="sideBar" class="flex col">
+        <text style="font-weight: bold;color: rgb(230, 223, 218);">Preview</text>
+        <svg id="svgPreview"></svg>
+        <div id="viewInfo" class="flex col">
+          <text style="font-weight: bold;">Hold</text>
+          <svg id="svgHold"></svg>
+        </div>
+        <div id="info" class="flex col">
+          <div class="text">
+            <span class="left">Level: </span>
+            <span class="right" id="levelText">...</span>
+          </div>
+          <div class="text">
+            <span class="left">Lines: </span>
+            <span class="right" id="linesText">...</span>
+          </div>
+          <div class="text">
+            <span class="left">Score: </span>
+            <span class="right" id="scoreText">...</span>
+          </div>
+          <div class="text">
+            <span class="left">Highscore: </span>
+            <span class="right" id="highScoreText">...</span>
+          </div>
+        <div>
+          <button id="restartButton" type="button" style="width: 100%; height: 100%; background-color: rgb(55,60,55); color: rgb(230, 223, 218); border-color: rgb(230, 223, 218); box-shadow: 2px 2px 2px #383730; border-radius: 0.5em;">Restart</button>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  <div id="controls" class="controls-box">
+  <h2>Controls:</h2>
+  <table>
+    <tr>
+      <td>
+        <div class="key-container">
+          <div id="ArrowLeft" class="key">&#8678;</div>
+          <div id="KeyA" class="key">A</div>
+        </div>
+      </td>
+      <td>Move Left</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="key-container">
+          <div id="ArrowRight" class="key">&#8680;</div>
+          <div id="KeyD" class="key">D</div>
+        </div>
+      </td>
+      <td>Move Right</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="key-container">
+          <div id="ArrowDown" class="key" >&#8681;</div>
+          <div id="KeyS" class="key">S</div>
+        </div>
+      </td>
+      <td>Move Down</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="key-container">
+          <div id="ArrowUp" class="key">&#8679;</div>
+          <div id="KeyW" class="key">W</div>
+        </div>
+      </td>
+      <td>Rotate</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="key-container">
+          <div> </div>
+          <div id="KeyC" class="key">C</div>
+        </div>
+      </td>
+      <td>Hold</td>
+    </tr>
+  </table>
+</div>
+
+    
+  </body>
+</html>
