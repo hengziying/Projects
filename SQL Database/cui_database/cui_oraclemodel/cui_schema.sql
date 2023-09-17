@@ -2,8 +2,7 @@
 --   at:        2023-05-03 11:26:12 MYT
 --   site:      Oracle Database 12c
 --   type:      Oracle Database 12c
---Group Name : T1_Group04
--- Group Members : Mark Manlagit, Heng Zi Ying, Chong Jin Yao
+
 
 -- Capture run of script in file called cui_schema_output.txt 
 set echo on
