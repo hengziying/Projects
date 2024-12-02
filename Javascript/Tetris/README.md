@@ -5,8 +5,8 @@ up, the difficulty will also increase as the speed of the game will increase. Th
 be recorded through every round of game. In the controls, the Super Rotation System without wall
 kick is implemented for rotating the blocks and the hold function also implemented for the player to
 hold the block for the current round.
-![Uploading tetris_interface.jpeg…]()
 
+![tetris_interface](https://github.com/user-attachments/assets/ef665894-4d25-46c7-8777-f5cc7f441f77)
 
 ## Usage
 
