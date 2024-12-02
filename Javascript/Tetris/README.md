@@ -5,9 +5,9 @@ up, the difficulty will also increase as the speed of the game will increase. Th
 be recorded through every round of game. In the controls, the Super Rotation System without wall
 kick is implemented for rotating the blocks and the hold function also implemented for the player to
 hold the block for the current round.
+![Uploading tetris_interface.jpeg…]()
 
-![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/hengziying/Projects/refs/heads/main/Javascript/Tetris/tetris_interface.jpeg))
-![alt text](https://github.com/hengziying/Projects/refs/heads/main/Javascript/blob/tetris_interface.jpeg?raw=true)
+
 ## Usage
 
 Setup (requires node.js):
