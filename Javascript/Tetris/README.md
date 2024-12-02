@@ -7,6 +7,7 @@ kick is implemented for rotating the blocks and the hold function also implement
 hold the block for the current round.
 
 ![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/hengziying/Projects/refs/heads/main/Javascript/Tetris/tetris_interface.jpeg))
+![alt text](https://github.com/hengziying/Projects/refs/heads/main/Javascript/tetris_interface.jpeg?raw=true)
 ## Usage
 
 Setup (requires node.js):
