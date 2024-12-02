@@ -6,6 +6,7 @@ be recorded through every round of game. In the controls, the Super Rotation Sys
 kick is implemented for rotating the blocks and the hold function also implemented for the player to
 hold the block for the current round.
 
+![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/hengziying/Projects/refs/heads/main/Javascript/Tetris/tetris_interface.jpeg))
 ## Usage
 
 Setup (requires node.js):
