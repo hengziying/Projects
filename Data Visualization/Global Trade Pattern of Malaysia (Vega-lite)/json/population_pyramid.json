@@ -1,0 +1,361 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179-A2/refs/heads/main/SITC_trade.csv",
+    "format": {"type": "csv"}
+  },
+  "title": "Malaysia Trade Value by SITC Section",
+  "transform": [
+    {
+      "calculate": "year(datum.date)",
+      "as": "year"
+    },
+    {
+      "filter": "datum.year >= 2020 && datum.year <= 2023"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "trade_val",
+          "as": "total_trade"
+        }
+      ],
+      "groupby": ["year", "section", "trade_type"]
+    },
+    {
+      "filter": "datum.total_trade > 0 && datum.section != 'overall'"
+    },
+    {
+      "calculate": "datum.total_trade / 1000",
+      "as": "total_trade_billion"
+    },
+    {
+       "calculate": "format(datum.total_trade_billion, '.2f') + ' B'",
+       "as": "total_trade_display"
+    },
+    {
+      "lookup": "section",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179-A2/refs/heads/main/SITC_Shorten.csv",
+          "format": {"type": "csv"}
+        },
+        "key": "SITC_Code",
+        "fields": ["SITC_Desc","SITC_Long_Desc"]
+      }
+    }
+  ],
+  "vconcat": [
+    {
+      "transform": [
+        {
+          "filter": "datum.year >= 2020 && datum.year <= 2021"
+        }
+      ],
+      "facet": {
+        "column": {
+          "field": "year",
+          "header":null
+        }
+      },
+      "spec": {
+        "concat": [
+          {
+            "width": 120,
+            "height": 180,
+            "transform": [{"filter": {"field": "trade_type", "equal": "exports"}}],
+            "mark": {
+              "type": "bar"
+            },
+            "encoding": {
+              "x": {
+                "field": "total_trade",
+                "type": "quantitative",
+                "scale": {
+                   "domain": [0, 700000]
+                },
+                "sort": "descending",
+                "axis": {
+                  "title": null,
+                  "labelExpr": "datum.value / 1000 + 'B'",
+                  "labelColor": {
+                    "expr": "datum.value === 0? '' : '#605A56'"
+                  }
+                  
+                }
+              },
+              "y": {
+                "field": "SITC_Desc",
+                "type": "ordinal",
+                "sort": {"field": "section", "order": "descending"},
+                "scale": {"paddingInner": 0.35},
+                "axis": {"orient": "left"}
+              },
+              "color": {
+                "field": "trade_type",
+                "type": "nominal",
+                "scale": {
+                  "domain": ["exports", "imports"],
+                  "range": ["#f1962e", "#74b3d2"]
+                },
+                "legend": {"title": "Trade Type","orient": "top","titleOrient": "center"}
+              },
+              "tooltip": [
+                {"field": "SITC_Long_Desc","title": "SITC Section"},
+                {"field": "total_trade_display", "title": "Export Trade Value (MYR)"}
+              ]
+            }
+          },
+          {
+            "width": 120,
+            "height": 180,
+            "transform": [{"filter": {"field": "trade_type", "equal": "imports"}}],
+            "mark": {
+              "type": "bar"
+            },
+            "encoding": {
+              "x": {
+                "field": "total_trade",
+                "type": "quantitative",
+                 "scale": {
+                   "domain": [0, 700000]
+                },
+                "axis": {
+                  "title": null,
+                  "labelExpr": "datum.value / 1000 + 'B'",
+                  "labelColor": "#605A56",
+                  "labelOffset": {
+                    "expr": "datum.value === 0 ? -5 : datum.value === 200 ? 10 : 0"
+                  }
+                }
+              },
+              "y": {
+                "field": "SITC_Desc",
+                "type": "ordinal",
+                "sort": {"field": "section", "order": "descending"},
+                "scale": {"paddingInner": 0.35},
+                "axis": {"labels": false}
+              },
+              "color": {
+                "field": "trade_type",
+                "type": "nominal",
+                "scale": {
+                  "domain": ["exports", "imports"],
+                  "range": ["#f1962e", "#74b3d2"]
+                },
+                "legend": {"title": "Trade Type","orient": "top","titleOrient": "center"}
+              },
+              "tooltip": [
+                {"field": "SITC_Long_Desc","title": "SITC Section"},
+                {"field": "total_trade_display", "title": "Import Trade Value (MYR)"}
+              ]
+            }
+          }
+        ],
+        "spacing": -5
+      }
+    },
+    {
+      "hconcat":[
+          {
+          "title": {
+            "text": "2020",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "color": "#62605F",
+            "dx": 110
+            
+          },
+          "mark": "text"
+        },
+        {
+          "title": {
+            "text": "2021",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "color": "#62605F",
+            "dx": 310
+          },
+          "mark": "text"
+        }
+      ]
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year >= 2022 && datum.year <= 2023"
+        }
+      ],
+      "facet": {
+        "column": {
+          "field": "year",
+          "header":null
+        }
+      },
+      "spec": {
+        "concat": [
+          {
+            "width": 120,
+            "height": 180,
+            "transform": [{"filter": {"field": "trade_type", "equal": "exports"}}],
+            "mark": {
+              "type": "bar"
+            },
+            "encoding": {
+              "x": {
+                "field": "total_trade",
+                "type": "quantitative",
+                "sort": "descending",
+                 "scale": {
+                   "domain": [0, 700000]
+                },
+                "axis": {
+                  "title": null,
+                  "labelColor": {
+                    "expr": "datum.value === 0? '' : '#605A56'"
+                  },
+                  "labelExpr": "datum.value === 0 ? '': datum.value / 1000 + 'B'"
+                }
+              },
+              "y": {
+                "field": "SITC_Desc",
+                "type": "ordinal",
+                "sort": {"field": "section", "order": "descending"},
+                "scale": {"paddingInner": 0.35},
+                "axis": {"orient": "left"}
+              },
+              "color": {
+                "field": "trade_type",
+                "type": "nominal",
+                "scale": {
+                  "domain": ["exports", "imports"],
+                  "range": ["#f1962e", "#74b3d2"]
+                },
+                "legend": null
+              },
+              "tooltip": [
+                {"field": "SITC_Long_Desc","title": "SITC Section"},
+                {"field": "total_trade_display", "title": "Export Trade Value (MYR)"}
+              ]
+            }
+          },
+          {
+            "width": 120,
+            "height": 180,
+            "transform": [{"filter": {"field": "trade_type", "equal": "imports"}}],
+            "mark": {
+              "type": "bar"
+            },
+            "encoding": {
+              "x": {
+                "field": "total_trade",
+                "type": "quantitative",
+                 "scale": {
+                   "domain": [0, 700000]
+                },
+                "axis": {
+                  "title": null,
+                  "labelColor": "#605A56",
+                  "labelExpr": "datum.value / 1000 + 'B'",
+                  "labelOffset": {
+                    "expr": "datum.value === 0 ? -5 : datum.value === 200 ? 10 : 0"
+                  }
+                }
+              },
+              "y": {
+                "field": "SITC_Desc",
+                "type": "ordinal",
+                "sort": {"field": "section", "order": "descending"},
+                "scale": {"paddingInner": 0.35},
+                "axis": {"labels": false}
+              },
+              "color": {
+                "field": "trade_type",
+                "type": "nominal",
+                "scale": {
+                  "domain": ["exports", "imports"],
+                  "range": ["#f1962e", "#74b3d2"]
+                },
+                "legend":null
+              },
+              "tooltip": [
+                {"field": "SITC_Long_Desc","title": "SITC Section"},
+                {"field": "total_trade_display", "title": "Import Trade Value (MYR)"}
+              ]
+            }
+          }
+        ],
+        "spacing": -5
+      }
+    },
+     {
+      "hconcat":[
+          {
+          "title": {
+            "text": "2022",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "color": "#62605F",
+            "dx": 110
+            
+          },
+          "mark": "text"
+        },
+        {
+          "title": {
+            "text": "2023",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "color": "#62605F",
+            "dx": 310
+          },
+          "mark": "text"
+        }
+      ]
+    }
+  ],
+  "spacing": 10,
+  "config": {
+    "background": "#fffefb",
+    "padding": {"top": 20, "bottom": -10, "left": 30, "right": 40},
+    "view": {"stroke": null},
+    "font": "sans-serif",
+    "title": {
+      "anchor": "middle",
+      "fontSize": 16,
+      "fontWeight": "bold",
+      "color": "#38393a",
+      "dy": -10, 
+      "align": "center"
+    },
+    "axis": {
+      "labelFont": "sans-serif",
+      "labelFontSize": 11,
+      "title": null 
+    },
+    "axisXQuantitative": {
+      "domainColor": "#9C8E85",
+      "grid": false,
+      "tickCount": 4,
+      "tickSize": 5,
+      "tickColor": "#9C8E85",
+      "labelPadding": 5
+    },
+    "axisYDiscrete": {
+      "domain": false,
+      "grid": true,
+      "gridColor": "#C9C0B4",
+      "gridOpacity": 0.3,
+      "ticks": false
+    },
+    "legend": {
+      "orient": "bottom",  
+      "symbolType": "square",
+      "symbolSize": 400,
+      "clipHeight": 8,
+      "symbolStrokeColor": "transparent",
+      "labelColor": "#373330"
+    }
+  }
+}

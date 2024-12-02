@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Global Trade Patterns of Malaysia</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header_card">
+        <img src="pic/title.png" width="900" height="180" style="display: block; margin-left: auto; margin-right: auto;">
+    </div>
+
+    <section class="subheader_card">
+        <img src="pic/trade_routes.png" width="450" height="50" style="display: block; margin-left: auto; margin-right: auto;">
+    </section>
+
+
+    <!-- Map and Buttons Section -->
+    <section class="card">
+        
+       
+        <div class="map_container">
+            <div class="switch-container">
+                <input type="checkbox" id="switch" class="checkbox" checked>
+                <label for="switch" class="toggle">
+                    <span class="switch-label export">Export</span>
+                    <span class="switch-label import">Import</span>
+                </label>
+            </label>
+            </div>       
+            <div id="map"></div>
+        </div>
+
+        <!-- <div class="switch-container">
+            <input type="checkbox" id="switch" class="checkbox" checked>
+            <label for="switch" class="toggle">
+                <span class="switch-label export">Export</span>
+                <span class="switch-label import">Import</span>
+            </label>
+        </label>
+        </div>        -->
+        <!-- <div class="button-container">
+            <button id="exportBtn" class="button-export">Export</button>
+            <button id="importBtn" class="button-import">Import</button>
+        </div> -->      
+        
+        <div class="desc_card2">
+            <div class="description">
+                <p>The visualizations of Malaysia's trade routes for 2020 to 2023 reveal a significant reliance on key trading partners, 
+                    notably the <b>United States</b>, <b>China</b>, and <b>Singapore</b>, for both <span style="color: #d68f2a;">exports</span> and <span style="color: #74b3d2;">imports</span>.
+                    Malaysia's export routes are primarily concentrated within the <b>Asia-Pacific</b> region, though connections to North America and Europe are also visible. 
+                    Both maps demonstrate the strong regional and global integration of Malaysia's trade, with a significant portion of its trading activity focused on these three countries, indicating reciprocal trade relations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="subheader_card">
+        <img src="pic/trade_sitc.png" width="700" height="75" style="display: block; margin-left: auto; margin-right: auto;">
+    </section>
+
+    <!-- Bar Chart Section -->
+    <section class="card">
+        <div class="population_pyramid_container">
+            <div id="populationpyramid"></div>
+            <script>
+                var vg_2 = "json/population_pyramid.json";
+                vegaEmbed("#populationpyramid", vg_2).then(function(result) {
+                }).catch(console.error);
+            </script>
+        </div>
+        <div class="desc_card2">
+            <div class="description">
+                <p>According to the chart, <b>machinery</b> consistently stands out as Malaysia’s largest trade category, with <span style="color: #74b3d2;">imports</span> surpassing <span style="color: #d68f2a;">exports</span> every year. 
+                    <b>Fuels & Lubricants</b> also show a notable increase in both <span style="color: #74b3d2;">imports</span> and <span style="color: #d68f2a;">exports</span> from 2020 to 2023, reflecting global energy trade patterns. <b>Manufactured goods</b>, 
+                    <b>chemicals</b>, and <b>oils & waxes</b> also contribute significantly, with more balanced <span style="color: #d68f2a;">export</span>-<span style="color: #74b3d2;">import</span> values. In contrast, categories like <b>food & live animals</b> and <b>beverages</b>
+                    have smaller trade volumes, suggesting Malaysia's focus on industrial sectors over agricultural products. The overall trend reveals steady growth in trade volume across 
+                    multiple sectors over time, signaling economic resilience and diversification.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="subheader_card">
+        <img src="pic/trade_balance.png" width="470" height="75" style="display: block; margin-left: auto; margin-right: auto;">
+    </section>
+
+    <!-- Balance Chart Section -->
+    <section class="third_card">
+        <div class="flex-container">
+            <div class = "notechart_container">
+                <div class="notes"> 
+                    Note: for comparative purposes, <span style="color: #74b3d2;">import</span> values have been displayed as negative values so that they can be displayed along <span style="color: #d68f2a;">exports</span> on the same axis.
+                </div>
+                
+                <div class="balance_chart_container">
+
+                    <div id="balancechart"></div>
+                    <script>
+                        var vg_3 = "json/balance_chart.json";
+                        vegaEmbed("#balancechart", vg_3).then(function(result) {
+                        }).catch(console.error);
+                    </script>
+                    
+                </div>
+            </div>
+            <div class="line_chart_container">
+                <div id="linechart"></div>
+                <script>
+                    var vg_4 = "json/line_chart.json"; // Path to your new chart's JSON file
+                    vegaEmbed("#linechart", vg_4).then(function(result) {
+                    }).catch(console.error);
+                </script>
+            </div>
+
+        </div>
+        <div class="desc_card2">
+            <div class="description">
+                <p>The trade balance chart from January 2020 to December 2023 shows a consistent positive trade balance, with <span style="color: #d68f2a;">exports</span> consistently surpassing imports (blue). 
+                    The monthly <span style="color: #d68f2a;">export</span> values display a steady increase, particularly after <b>mid-2021</b>, peaking in <b>mid-2023</b>. <span style="color: #74b3d2;">Imports</span>, though smaller in comparison, also gradually rise during the same period. 
+                    On the trade growth chart, both <span style="color: #d68f2a;">exports</span> and <span style="color: #74b3d2;">imports</span> exhibit significant fluctuations throughout the period. <b>Early 2020</b>shows a dramatic dip, followed by sharp rebounds, largely due to the global economic slowdown caused by the <strong>COVID-19 pandemic</strong>, which severely impacted trade volumes. 
+                    The volatility in trade growth reduces over time, with less extreme peaks and troughs observed by <b>late 2023</b>. The trends indicate that while Malaysia's trade volume has grown steadily, growth rates have been more erratic.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="subheader_card">
+        <img src="pic/trade_to_gdp.png" width="240" height="40" style="display: block; margin-left: auto; margin-right: auto;">
+    </section>
+
+
+   
+      <!-- New Chart Section -->
+      <section class="card">
+        <div class="flex-container">
+            <div class="bubble_chart_container">
+                <div id="bubblechart"></div>
+                <script>
+                    var vg_5 = "json/bubble_chart.json"; // Path to your new chart's JSON file
+                    vegaEmbed("#bubblechart", vg_5).then(function(result) {
+                    }).catch(console.error);
+                </script>
+            <p> 
+                *Hover on the bubbles to highlight on the specific year.
+            <p>
+            </div>
+
+            <div class="desc_card">
+                <div class="description">
+                    <p>The trend shows that as GDP increases, trade value also rises, particularly noticeable in <b><span style="color: #8c7257;">2022</span></b> and <b><span style="color: #b14d8e;">2022</span></b> where the larger bubbles (indicating higher trade-to-GDP ratios) are concentrated around the 450-500 billion GDP mark. 
+                        The <b>smallest</b> bubble, representing <b><span style="color: #2179a4;">2020 Q2</span></b>, indicates a lower trade value and GDP during the early stages of the <strong>COVID-19 pandemic</strong>, with a trade-to-GDP ratio of <b>0.46</b>. 
+                        Over time, trade value and GDP both increase, with <b><span style="color: #8c7257;">2022 Q3</span></b> showing the <b>highest</b> with the trade-to-GDP ratio of <b>0.56</b> , reflecting a recovery in trade and economic activity.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class = "author_card">
+        <div class="author">
+            <p>Author: Heng Zi Ying</span></p>
+            <p><span style="font-size: smaller;">Source <a href="https://comtradeplus.un.org/">UN Comtrade Database</a>, 
+                <a href="https://open.dosm.gov.my/data-catalogue">Department of Statistics Malaysia</a>
+              </span> </p>
+        </div>
+    </section>
+
+    <script>
+        // Function to update the map visualization based on user selection
+        function updateMap(mapFile) {
+            vegaEmbed("#map", mapFile).then(function(result) {
+            }).catch(console.error);
+        }
+    
+        // Get the toggle switch (checkbox)
+        const toggleSwitch = document.getElementById('switch');
+    
+        // Event listener for the toggle switch
+        toggleSwitch.addEventListener('change', function() {
+            if (toggleSwitch.checked) {
+                // Switch is ON (showing export data)
+                updateMap("json/map_export.json");
+            } else {
+                // Switch is OFF (showing import data)
+                updateMap("json/map_import.json");
+            }
+        });
+    
+        // Initialize with default (export data or none)
+        updateMap("json/map_export.json"); // Set the default state
+    </script>
+
+
+    
+</body>
+</html>

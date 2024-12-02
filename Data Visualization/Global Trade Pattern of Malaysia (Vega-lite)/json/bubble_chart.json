@@ -1,0 +1,192 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 350,
+  "height": 300,
+  "title": "Trade to GDP Ratio of Malaysia",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179-A2/refs/heads/main/Export%26ImportByMonth.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "((datum.month - 1) / 3) + 1",
+      "as": "quarter"
+    },
+    {
+      "calculate": "datum.year + ' Q' + datum.quarter",
+      "as": "year_quarter"
+    },
+    {
+      "aggregate": [
+        {"op": "sum", "field": "import_val", "as": "total_import_val"},
+        {"op": "sum", "field": "export_val", "as": "total_export_val"}
+      ],
+      "groupby": ["year", "quarter", "year_quarter"]
+    },
+    {
+      "lookup": "year_quarter",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179-A2/refs/heads/main/Malaysia_GDP_Quaterly.csv",
+          "format": {"type": "csv"}
+        },
+        "key": "year_quarter",
+        "fields": ["gdp"]
+      }
+    },
+    {
+      "filter": "isValid(datum.gdp)"
+    },
+    {
+      "calculate": "datum.total_export_val / 1e9 * 4.5",
+      "as": "total_export_billion"
+    },
+    {
+      "calculate": "format(datum.total_export_billion, '.2f') + ' B'",
+      "as": "total_export_display"
+    },
+    {
+      "calculate": "datum.total_import_val / 1e9 * 4.5",
+      "as": "total_import_billion"
+    },
+    {
+      "calculate": "format(datum.total_import_billion, '.2f') + ' B'",
+      "as": "total_import_display"
+    },
+    {
+      "calculate": "datum.gdp / 1000",
+      "as": "gdp_billion"
+    },
+    {
+      "calculate": "format(datum.gdp_billion, '.2f') + ' B'",
+      "as": "gdp_display"
+    },
+    {
+      "calculate": "datum.total_export_billion + datum.total_import_billion",
+      "as": "total_trade_billion"
+    },
+    {
+      "calculate": "(datum.total_import_billion + datum.total_export_billion) / datum.gdp_billion",
+      "as": "trade_to_gdp_ratio"
+    },
+    {
+      "calculate": "format(datum.trade_to_gdp_ratio, '.2f')",
+      "as": "trade_to_gdp_ratio_display"
+    },
+    {
+      "window": [{"op": "min", "field": "total_trade_billion", "as": "min_trade"}],
+      "frame": [null, null]
+    },
+    {
+      "window": [{"op": "max", "field": "total_trade_billion", "as": "max_trade"}],
+      "frame": [null, null]
+    }
+  ],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hovered",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "fields": ["year"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle"
+      },
+      "encoding": {
+        "x": {
+          "field": "gdp_billion",
+          "type": "quantitative",
+          "axis": {"title": "GDP (Billions)"},
+          "scale": {
+            "domain": [200, 500],
+            "clamp": true
+          }
+        },
+        "y": {
+          "field": "total_trade_billion",
+          "type": "quantitative",
+          "axis": {"title": "Total Trade Value (Billions)"},
+          "scale": {
+            "domain": [100, 300],
+            "nice": true,
+            "clamp": true
+          }
+        },
+        "size": {
+          "field": "trade_to_gdp_ratio",
+          "type": "quantitative",
+          "title": "Trade-to-GDP ratio",
+          "scale": {
+            "type": "log",
+            "range": [100, 1000]
+          }
+        },
+        "color": {
+          "field": "year",
+          "type": "nominal",
+          "legend": {"title": "Year"},
+          "scale": {
+            "domain": ["2020", "2021", "2022", "2023"],
+            "range": ["#2179a4", "#ea9a27", "#8c7257", "#b14d8e"]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "hovered",
+            "value": 0.8
+          },
+          "value": 0.3
+        },
+        "tooltip": [
+          {"field": "year_quarter", "title": "Year Quarter"},
+          {"field": "gdp_display", "title": "GDP"},
+          {"field": "total_export_display", "title": "Total Export"},
+          {"field": "total_import_display", "title": "Total Import"},
+          {"field": "trade_to_gdp_ratio_display", "title": "Trade to GDP Ratio"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -21, "dx": 2, "color": "#4d4a4a"},
+      "encoding": {
+        "x": {"field": "gdp_billion", "type": "quantitative"},
+        "y": {"field": "total_trade_billion", "type": "quantitative"},
+        "text": {
+          "condition": {
+            "test": "datum.total_trade_billion == datum.max_trade",
+            "field": "year_quarter"
+          }
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": 15, "dx": 0, "color": "#4d4a4a"},
+      "encoding": {
+        "x": {"field": "gdp_billion", "type": "quantitative"},
+        "y": {"field": "total_trade_billion", "type": "quantitative"},
+        "text": {
+          "condition": {
+            "test": "datum.total_trade_billion == datum.min_trade",
+            "field": "year_quarter"
+          },
+          "value": ""
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "#fffefb",
+    "font": "sans-serif",
+    "title": {
+      "fontSize": 16,
+      "fontWeight": "bold",
+      "color": "#38393a",
+      "align": "center"
+    }
+  }
+}

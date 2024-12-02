@@ -1,0 +1,206 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 350,
+  "height": 300,
+  "title": "Trade Balance of Malaysia",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179-A2/refs/heads/main/Export%26ImportByMonth.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "year_range",
+      "value": ["2020"],
+      "bind": {
+        "name": "Year",
+        "input": "range",
+        "min": 2020,
+        "max": 2023,
+        "step": 1
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.year <= year_range"
+    },
+    {
+      "calculate": "datetime(datum.year, datum.month-1, 1)",
+      "as": "date"
+    },
+    {
+      "calculate": "-datum.import_val / 1e9 *4.5",
+      "as": "neg_import_billions"
+    },
+    {
+      "calculate": "datum.export_val / 1e9*4.5",
+      "as": "total_export_billions"
+    },
+    {
+      "calculate": "(datum.export_val - datum.import_val) / 1e9 * 4.5",
+      "as": "trade_balance_billion"
+    },
+    { 
+      "calculate": "format(datum.neg_import_billions, '.2f') + ' B'",
+      "as": "ImportValDisplay"
+    },
+    { 
+      "calculate": "format(datum.total_export_billions, '.2f') + ' B'",
+      "as": "ExportValDisplay"
+    },
+    { 
+      "calculate": "format(datum.trade_balance_billion, '.2f') + ' B'",
+      "as": "TradeBalanceDisplay"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "opacity": 0.8,
+        "cornerRadiusBottomLeft": 5,
+        "cornerRadiusBottomRight": 5,
+        "color":"#74b3d2"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "yearmonth",
+          "axis": {
+            "title": "Month and Year",
+            "format": "%b %Y",
+            "labelColor": "#6B7280",
+            "titleColor": "#374151",
+            "labelAngle":45
+          },
+          "bandPosition": 0.5
+        },
+        "y": {
+          "field": "neg_import_billions",
+          "type": "quantitative",
+          "axis": {
+            "title": "Trade Values (in Billions, MYR)",
+            "grid": false,
+            "labelColor": "#6B7280",
+            "titleColor": "#374151"
+          }
+        },
+        "color": {"value": "#4C78A8"},
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date", "format": "%b %Y"},
+          {
+            "field": "ImportValDisplay",
+            "title": "Total Import (MYR)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "opacity": 0.8,
+        "cornerRadiusTopLeft": 5,
+        "cornerRadiusTopRight": 5,
+        "color":"#f1962e"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "ordinal",
+          "timeUnit": "yearmonth",
+          "axis": {
+            "title": "Month and Year",
+            "format": "%b %Y",
+            "labelColor": "#6B7280",
+            "titleColor": "#374151",
+            "labelAngle":45
+          },
+          "bandPosition": 0.5
+        },
+        "y": {
+          "field": "total_export_billions",
+          "type": "quantitative",
+          "axis": {
+            "title": "Trade Values (in Billions, MYR)"
+          }
+        },
+        "color": {"value": "#F28E2B"},
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date", "format": "%b %Y"},
+          {
+            "field": "ExportValDisplay",
+            "title": "Total Export (MYR)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "white",
+        "strokeWidth": 1.5,
+        "point": {"filled": true, "fill": "#374151", "size": 40}
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "ordinal",
+          "timeUnit": "yearmonth",
+          "axis": {
+            "title": "Month and Year",
+            "labelColor": "#6B7280",
+            "titleColor": "#374151",
+            "labelAngle":45
+          },
+          "bandPosition": 0.5 
+        },
+        "y": {
+          "field": "trade_balance_billion",
+          "type": "quantitative",
+          "axis": {
+            "title": ""
+          }
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date", "format": "%b %Y"},
+          {
+            "field": "TradeBalanceDisplay",
+            "title": "Trade Balance (MYR)"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": "#fffefb",
+    "font": "sans-serif",
+    "title": {
+      "fontSize": 16,
+      "fontWeight": "bold",
+      "color": "#38393a",
+      "align": "center"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 13,
+      "labelColor": "#6B7280",
+      "titleColor": "#374151",
+      "domainColor": "#ddd",
+      "tickColor": "#ddd"
+    },
+    "legend": {
+      "titleFontSize": 14,
+      "labelFontSize": 12,
+      "labelColor": "#6B7280",
+      "titleColor": "#374151"
+    },
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      },
+      "guide-label": {"fontSize": 12, "fill": "#666"},
+      "guide-title": {"fontSize": 14, "fill": "#333"}
+    }
+  }
+}

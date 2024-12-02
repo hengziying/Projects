@@ -1,0 +1,243 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 435,
+  "title": "Top 20 Import Destinations of Malaysia",
+  "background": "#fffefb",
+  "projection": {
+    "type": "equalEarth",
+    "scale": {"expr": "zoom_level"},
+    "center": {"signal": "center_to"}
+  },
+  "params": [
+    {
+      "name": "zoom_level",
+      "value": 160,
+      "bind": {
+        "input": "range",
+        "min": 160,
+        "max": 300,
+        "step": 10,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [0, 0],
+      "bind": {
+        "input": "select",
+        "options": [
+          [0, 0],
+          [50, 25],
+          [-20, -20],
+          [-120, 0],
+          [45, 50],
+          [140, -20],
+          [140, 0]
+        ],
+        "labels": [
+          "Whole map",
+          "Eastern Mediterranean",
+          "Africa",
+          "Americas",
+          "Europe",
+          "South-East Asia",
+          "Eastern Pacific"
+        ],
+        "name": "Focus: "
+      }
+    },
+    {
+      "name": "SelectedYear",
+      "value": "2020",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2020",
+          "2021",
+          "2022",
+          "2023"
+        ],
+        "name": "Year: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179/main/ne_110m_admin_0_countries.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179-A2/refs/heads/main/MalaysiaImportData.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {
+          "filter": "datum.Year == SelectedYear"  
+        },
+        {
+          "calculate": "toNumber(datum.ImportValue)",
+          "as": "ImportValueNum"
+        },
+        {
+          "calculate": "datum.ImportValueNum / 1e9* 4.5",
+          "as": "ImportValBillions"
+        },
+        {
+          "calculate": "format(datum.ImportValBillions, '.2f') + ' B'",
+          "as": "ImportValDisplay"
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "rank"
+            }
+          ],
+          "sort": [{"field": "ImportValueNum", "order": "descending"}]
+        },
+        {
+          "filter": "datum.rank <= 20"
+        },
+        {
+          "lookup": "ImportCountry",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/ziyingheng0701/FIT3179-A2/refs/heads/main/country_lat_long.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "country_name",
+            "fields": ["latitude", "longitude"]
+          },
+          "as": ["dest_latitude", "dest_longitude"]
+        },
+        {
+          "calculate": "3.1390",
+          "as": "Malaysia_latitude"
+        },
+        {
+          "calculate": "101.6869",
+          "as": "Malaysia_longitude"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#74b3d2",
+            "strokeOpacity": 0.8
+          },
+          "encoding": {
+            "longitude": {
+              "field": "Malaysia_longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "Malaysia_latitude",
+              "type": "quantitative"
+            },
+            "longitude2": {
+              "field": "dest_longitude"
+            },
+            "latitude2": {
+              "field": "dest_latitude"
+            },
+            "size": {
+              "value": 1
+            },
+            "tooltip": [
+              {"field": "ImportCountry", "type": "nominal", "title": "Country"},
+              {"field": "ImportValDisplay", "title": "Import Value (MYR)"}
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "color": "#2e425a"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "dest_longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "dest_latitude",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "ImportValue",
+              "type": "quantitative",
+              "scale": {
+                "domain": [29.163, 48092322740],
+                "range": [10, 100]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {"field": "Year", "title": "Year"},
+              {"field": "ImportCountry", "type": "nominal", "title": "Country"},
+              {"field": "ImportValDisplay", "title": "Import Value (MYR)"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.rank <= 3"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 5
+          },
+          "encoding": {
+            "longitude": {
+              "field": "dest_longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "dest_latitude",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "ImportCountry",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "background": "#fffefb",
+    "padding": {"top": 20, "bottom": -10, "left": 30, "right": 40},
+    "view": {"stroke": null},
+    "font": "sans-serif",
+    "title": {
+      "fontSize": 16,
+      "fontWeight": "bold",
+      "color": "#38393a",
+      "align": "center"
+    },
+    "axis": {
+      "labelFont": "sans-serif",
+      "labelFontSize": 11,
+      "title": null 
+    }
+  }
+}
