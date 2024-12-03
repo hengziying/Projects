@@ -18,7 +18,8 @@ This project is a comprehensive Event Management Android Application designed to
 - **Add New Categories:** Create new categories using a dedicated form accessible from the dashboard menu.
 - **View Categories:** Browse all categories in the "View All Categories" page. Clicking on a category displays its location on an interactive map, powered by Google Maps.
 
-  <img width="459" alt="image" src="https://github.com/user-attachments/assets/a1a9d177-f97f-467e-bd3b-11f0ec8444ba">
+  <img width="463" alt="image" src="https://github.com/user-attachments/assets/95f89030-27d8-42f0-a6dd-e2a39df87998">
+
 
 
 ### Event Management
