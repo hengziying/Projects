@@ -4,12 +4,18 @@ from typing import TypeVar, Generic
 # from referential_array import ArrayR, T
 T = TypeVar('T')
 
-##################################################
-# Fast Backup                                    #
-# An algorithm to determine the maximum possible #
-# data throughput from the data center origin to # 
-# the target data centers using Python.          #
-##################################################
+###################################################
+# Fast Backup                                     #
+# An algorithm to determine the maximum possible  #
+# data throughput from the data center origin to  #
+# the target data centers using Python. This is   #
+# done by converting the input to a graph and     #
+# used the concept of residual network and        #
+# Ford-Fulkerson algorithm to determine the       #
+# optimal flow. This can be used in a company for # 
+# processing backup requests between data centers #
+# and network connections.                        #
+###################################################
 class Queue(ABC, Generic[T]):
     """ Abstract class for a generic Queue.
     *Reference from FIT1008 Queue ADT implementation
