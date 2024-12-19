@@ -244,7 +244,7 @@ class ResidualNetwork:
 
     def has_AugmentingPath(self, source,destination):
         """
-           Function description: This function check whether this residual network has path to augment by using BFS to trverse through the trie.
+           Function description: This function check whether this residual network has path to augment by using BFS to trverse through the network.
 
            Input:
                source : A vertex object represents the source vertex
